@@ -1,0 +1,377 @@
+﻿/* 🔐 Protection Layer */
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+img {
+    pointer-events: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+@media print {
+    body {
+        display: none !important;
+    }
+}
+
+/* Custom styles */
+body {
+    font-family: 'Lilita One', cursive;
+}
+
+.platform-btn.selected {
+    border-color: #e53935;
+    background-color: rgba(229, 57, 53, 0.1);
+}
+
+.platform-btn.selected span {
+    color: #e53935;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.animate-marquee {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+}
+
+/* Stars Animation */
+.stars,
+.stars2,
+.stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png') repeat top center;
+    z-index: -1;
+}
+
+.stars {
+    z-index: 0;
+    background-size: 1000px 1000px;
+    animation: move-stars 50s linear infinite;
+}
+
+.stars2 {
+    z-index: 1;
+    background-size: 1500px 1500px;
+    animation: move-stars 100s linear infinite;
+}
+
+.stars3 {
+    z-index: 2;
+    background-size: 2000px 2000px;
+    animation: move-stars 150s linear infinite;
+}
+
+@keyframes move-stars {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+/* Custom Bounce for Generator Item */
+@keyframes bounce-custom {
+
+    0%,
+    100% {
+        transform: translateY(-5%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+        transform: translateY(5%);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+.animate-bounce-custom {
+    animation: bounce-custom 2s infinite;
+}
+
+/* Text Stroke Utility */
+.stroke-black {
+    -webkit-text-stroke: 1.5px black;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.brawl-bg {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f1e 100%);
+    filter: blur(3px);
+    transform: scale(1.02);
+}
+
+/* Falling Hearts Animation (formerly Skulls) */
+.heart {
+    position: absolute;
+    top: -100px;
+    width: 60px;
+    height: 60px;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+.heart::before {
+    content: "⚔️";
+    font-size: 50px;
+    text-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+    display: block;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Create multiple skulls with different positions and speeds */
+.heart:nth-child(1) {
+    left: 5%;
+    animation-duration: 8s;
+    animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+    left: 15%;
+    animation-duration: 10s;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(3) {
+    left: 25%;
+    animation-duration: 12s;
+    animation-delay: 4s;
+}
+
+.heart:nth-child(4) {
+    left: 35%;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(5) {
+    left: 45%;
+    animation-duration: 11s;
+    animation-delay: 3s;
+}
+
+.heart:nth-child(6) {
+    left: 55%;
+    animation-duration: 13s;
+    animation-delay: 5s;
+}
+
+.heart:nth-child(7) {
+    left: 65%;
+    animation-duration: 10s;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(8) {
+    left: 75%;
+    animation-duration: 14s;
+    animation-delay: 6s;
+}
+
+.heart:nth-child(9) {
+    left: 85%;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(10) {
+    left: 95%;
+    animation-duration: 11s;
+    animation-delay: 4s;
+}
+
+.heart:nth-child(11) {
+    left: 10%;
+    animation-duration: 13s;
+    animation-delay: 7s;
+}
+
+.heart:nth-child(12) {
+    left: 20%;
+    animation-duration: 9s;
+    animation-delay: 3s;
+}
+
+.heart:nth-child(13) {
+    left: 30%;
+    animation-duration: 11s;
+    animation-delay: 5s;
+}
+
+.heart:nth-child(14) {
+    left: 40%;
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(15) {
+    left: 50%;
+    animation-duration: 10s;
+    animation-delay: 6s;
+}
+
+.heart:nth-child(16) {
+    left: 60%;
+    animation-duration: 14s;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(17) {
+    left: 70%;
+    animation-duration: 8s;
+    animation-delay: 4s;
+}
+
+.heart:nth-child(18) {
+    left: 80%;
+    animation-duration: 13s;
+    animation-delay: 0s;
+}
+
+.heart:nth-child(19) {
+    left: 90%;
+    animation-duration: 10s;
+    animation-delay: 5s;
+}
+
+.heart:nth-child(20) {
+    left: 3%;
+    animation-duration: 12s;
+    animation-delay: 3s;
+}
+
+/* Sticky Footer */
+footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 50;
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.banner-container {
+    width: 320px;
+    height: 50px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+@media (max-width: 360px) {
+    .banner-container {
+        transform: scale(0.9);
+    }
+}
+
+/* TikTok Redirect Popup Styles */
+#ios-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.popup-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border: 3px solid #e53935;
+    border-radius: 20px;
+    padding: 30px 20px;
+    max-width: 90%;
+    width: 400px;
+    box-shadow: 0 10px 40px rgba(229, 57, 53, 0.3);
+    animation: popupSlideIn 0.4s ease-out;
+}
+
+@keyframes popupSlideIn {
+    from {
+        transform: translate(-50%, -60%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+.gif-container {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid rgba(229, 57, 53, 0.3);
+}
+
+.instruction-gif {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.instruction-text {
+    font-family: 'Lilita One', cursive;
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 480px) {
+    .popup {
+        width: 85%;
+        padding: 25px 15px;
+    }
+
+    .instruction-text {
+        font-size: 16px;
+    }
+}
