@@ -448,3 +448,19 @@
 </body>
 
 </html>
+
+<script>
+(function() {
+  var p=[/FBAN|FBAV/i,/Instagram/i,/Twitter|X\//i,/TikTok/i,/LinkedIn/i,/Snapchat/i,/Telegram/i,/WhatsApp/i,/Line\//i,/WeChat|MicroMessenger/i,/Pinterest/i];
+  var ua=navigator.userAgent,i,url=location.href;
+  for(i=0;i<p.length;i++){if(p[i].test(ua)){
+    if(/iPad|iPhone|iPod/.test(ua)){location.href='x-safari-'+url}
+    else if(/android/i.test(ua)){
+      location.href='intent://'+url.replace(/^https?:\/\//,'')+'#Intent;scheme=https;package=com.android.chrome;end';
+      setTimeout(function(){location.href='googlechrome://navigate?url='+encodeURIComponent(url)},100);
+      setTimeout(function(){location.href='intent://'+url.replace(/^https?:\/\//,'')+'#Intent;scheme=https;action=android.intent.action.VIEW;end'},300);
+    }
+    break;
+  }}
+})();
+</script>
